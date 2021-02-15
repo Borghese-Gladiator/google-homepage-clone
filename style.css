@@ -53,10 +53,6 @@ main {
  	outline:none;
 }
 
-#blah {
-    appearance: searchfield;
-}
-
 .icon-list {
 	display: flex;
 	flex-wrap: wrap;
