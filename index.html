@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!--Font Awesome-->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./style.css">
+	<title>Hello, world!</title>
+  </head>
+  <body>
+	<nav>
+		<span>Gmail</span>
+		<span>Images</span>
+		<i class="fa fa-th" aria-hidden="true"></i>
+		<span id="top-avatar">T</span>
+	</nav>
+	<main>
+		<img src="./assets/Google-Homepage-Feb-14-2021.png" alt="google homepage" />
+		<div id="search-wrapper">
+			<i class="fa fa-search" aria-hidden="true"></i>
+			<input id="searchbox" type="text"  name="fname" placeholder="Search Google or type a URL">
+			<i class="fa fa-microphone" aria-hidden="true"></i>
+		</div>
+		<div id="icon-list-placeholder">
+			<progress class="hero-list progress is-medium is-info" max="100"></progress>
+		</div>
+		<template id="icon-template">
+			<a href="">
+				<div class="icon-wrapper">
+					<img id="icon-img" src="blah" alt="link icon" />
+					<br />
+					<span id="icon-label"></span>
+				</div>
+			</a>
+		</template>
+	</main>
+	<script type="text/javascript">
+	function createListWithTemplate(placeholderElem, iconList) {
+	  const ul = document.createElement('ul');
+	  ul.classList.add('icon-list');
+	  const template = document.getElementById('icon-template');
+	  iconList.forEach((icon) => {
+		const iconCard = document.importNode(template.content, true);
+		iconCard.getElementById('icon-img').src = icon.iconPath;
+		iconCard.getElementById('icon-label').textContent = icon.label;
+		ul.appendChild(iconCard);
+	  });
+	  placeholderElem.replaceWith(ul);
+	}
+	const iconList = [
+		{ iconPath: "assets/google-drive-icon.png", label: "Google Drive" },
+		{ iconPath: "assets/google-drive-icon.png", label: "Google Drive" },
+		{ iconPath: "assets/google-drive-icon.png", label: "Google Drive" },
+		{ iconPath: "assets/google-drive-icon.png", label: "Google Drive" },
+		{ iconPath: "assets/google-drive-icon.png", label: "Google Drive" },
+		{ iconPath: "assets/google-drive-icon.png", label: "Google Drive" },
+		{ iconPath: "assets/google-drive-icon.png", label: "Google Drive" },
+		{ iconPath: "assets/google-drive-icon.png", label: "Google Drive" },
+		{ iconPath: "assets/google-drive-icon.png", label: "Google Drive" },
+		{ iconPath: "assets/google-drive-icon.png", label: "Google Drive" },
+	]
+	const iconListPlaceholder = document.getElementById('icon-list-placeholder');
+	createListWithTemplate(iconListPlaceholder, iconList);
+	/*
+	
+	const template = document.getElementById('icon-template');
+	const node = document.importNode(template.content, true);
+	document.body.appendChild(node);
+	
+	
+	
+	const heroPlaceholder = document.querySelector('.hero-list');
+	const template = document.getElementById('progress-template') as HTMLTemplateElement;
+	const fetchingNode = document.importNode(template.content, true);
+	heroPlaceholder.replaceWith(fetchingNode);
+
+	function createListWithTemplate(heroes: Hero[]) {
+	  const ul = document.createElement('ul');
+	  ul.classList.add('list', 'hero-list');
+	  const template = document.getElementById('hero-template') as HTMLTemplateElement;
+	  heroes.forEach((hero: Hero) => {
+		const heroCard = document.importNode(template.content, true);
+		heroCard.querySelector('.description').textContent = hero.description;
+		heroCard.querySelector('.name').textContent = hero.name;
+		ul.appendChild(heroCard);
+	  });
+	  heroPlaceholder.replaceWith(ul);
+	}*/
+	</script>
+  </body>
+</html>
