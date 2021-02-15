@@ -7,3 +7,4 @@ Built the Google Home page using:
 - HTML Templates (HTML5 Feature)
 - CSS Selectors (:hover, :focus)
 - Vanilla JS (document.importNode())
+- Font Awesome 4 (from Bootstrap CDN)
